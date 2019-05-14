@@ -1,0 +1,38 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "env": {
+        "react-native/react-native": true
+    },
+    "plugins": [
+        "react",
+        "react-native"
+    ],
+    "settings": {
+        "react-native/style-sheet-object-names": ["EStyleSheet", "OtherStyleSheet", "PStyleSheet"]
+    },
+    "rules": {
+        "react-native/no-unused-styles": 2,
+        "react-native/split-platform-components": 2,
+        "react-native/no-inline-styles": 2,
+        "react-native/no-color-literals": 2,
+        "react-native/no-raw-text": 2,
+        "no-undef" : 0,
+        "no-console": 0,
+        "no-alert": 0,
+        "max-len": [0, 200],
+        "indent": [2, 2, {"SwitchCase": 1}],
+        "react/jsx-filename-extension": 0,
+        "global-require": 0,
+        "react/prop-types": 1,
+        "react/prefer-stateless-function": 0,
+        "linebreak-style": 0,
+        "no-use-before-define": 0
+    }
+}
