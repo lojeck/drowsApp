@@ -10,11 +10,13 @@ import {
   InteractionManager,
   Platform,
   Image,
+  TouchableOpacity,
 } from 'react-native'
 import HomePage from './HomePage'
 import ThemeDao from '../model/dao/ThemeDao'
 import SplashScreen from 'react-native-splash-screen'
 import {StackActions, NavigationActions} from "react-navigation";
+import CodePush from "react-native-code-push";
 export default class WelcomePage extends Component {
 
   componentDidMount() {
@@ -35,13 +37,15 @@ export default class WelcomePage extends Component {
       });
     }, 500);
   }
+
+
   componentWillUnmount() {
     this.timer && clearTimeout(this.timer);
   }
   render() {
     return (
       <View style={styles.container}>
-        {/*<Image style={{flex:1,width:null}} resizeMode='contain' source={require('../res/images/launch_screen.png')}/>*/}
+
       </View>
     );
   }

@@ -77,6 +77,7 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -106,7 +107,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
     splits {
         abi {
@@ -120,6 +121,16 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            buildConfigField "String", "CODEPUSH_KEY", '"4oEQyxex9aWzRjd4mkjVnXJBO3g_XaiyxjX49d"'
+        }
+        releaseStaging {
+            // 从 release 拷贝配置，只修改了 pushKey
+            initWith release
+            buildConfigField "String", "CODEPUSH_KEY", '"YnJyIZQYu5z1fkhJJcO2h5PDIfg9O7gbCmm4g"'
+        }
+
+        debug {
+            buildConfigField "String", "CODEPUSH_KEY", '"YnJyIZQYu5z1fkhJJcO2h5PDIfg9O7gbCmm4g"'
         }
     }
     // applicationVariants are e.g. debug, release
@@ -138,6 +149,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-code-push')
     implementation project(':react-native-vector-icons')
     implementation project(':@react-native-community_async-storage')
     implementation project(':react-native-gesture-handler')
