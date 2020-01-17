@@ -17,6 +17,11 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 
 export default class HomePage extends Component {
+
+  static navigationOptions = {
+    header: null,
+  };
+
   constructor(props) {
     super(props);
   }

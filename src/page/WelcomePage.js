@@ -16,7 +16,6 @@ import HomePage from './HomePage'
 import ThemeDao from '../model/dao/ThemeDao'
 import SplashScreen from 'react-native-splash-screen'
 import {StackActions, NavigationActions} from "react-navigation";
-import CodePush from "react-native-code-push";
 export default class WelcomePage extends Component {
 
   componentDidMount() {

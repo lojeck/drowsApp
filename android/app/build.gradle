@@ -107,8 +107,25 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.1"
     }
+
+    signingConfigs {
+        release {
+            keyAlias 'drows'
+            keyPassword 'drowsApp'
+            storeFile file('../keystores/drows.jks')
+            storePassword 'drowsApp'
+        }
+
+        releaseStaging {
+            keyAlias 'drows'
+            keyPassword 'drowsApp'
+            storeFile file('../keystores/drows.jks')
+            storePassword 'drowsApp'
+        }
+    }
+
     splits {
         abi {
             reset()
@@ -122,15 +139,20 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             buildConfigField "String", "CODEPUSH_KEY", '"4oEQyxex9aWzRjd4mkjVnXJBO3g_XaiyxjX49d"'
+            signingConfig signingConfigs.release
         }
         releaseStaging {
             // 从 release 拷贝配置，只修改了 pushKey
-            initWith release
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.releaseStaging
             buildConfigField "String", "CODEPUSH_KEY", '"YnJyIZQYu5z1fkhJJcO2h5PDIfg9O7gbCmm4g"'
+            matchingFallbacks = ['debug', 'release']
         }
 
         debug {
             buildConfigField "String", "CODEPUSH_KEY", '"YnJyIZQYu5z1fkhJJcO2h5PDIfg9O7gbCmm4g"'
+            applicationIdSuffix ".debug"
         }
     }
     // applicationVariants are e.g. debug, release

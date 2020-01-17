@@ -12,6 +12,9 @@ import {
 } from 'react-native';
 
 export default class Setting extends Component {
+  static navigationOptions = {
+    header: null,
+  };
   constructor(props) {
     super(props);
   }

@@ -4,6 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "android-bundle": "react-native bundle --entry-file index.js --platform android --dev false --bundle-output ./bundles/index.android.bundle",
+    "ios-bundle": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ./bundles/index.ios.bundle",
+
+    "push": "code-push release-react drowsApp android -d Staging --des 热更新测试",
     "test": "jest"
   },
   "dependencies": {
