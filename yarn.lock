@@ -5444,6 +5444,11 @@ react-native-code-push@^6.0.0:
     semver "^5.6.0"
     xcode "1.0.0"
 
+react-native-device-info@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.npm.taobao.org/react-native-device-info/download/react-native-device-info-2.1.2.tgz#5c553498e8930410aa65796b83f8f8c8fb9893b4"
+  integrity sha1-XFU0mOiTBBCqZXlrg/j4yPuYk7Q=
+
 react-native-drawer@2.5.1:
   version "2.5.1"
   resolved "https://registry.npm.taobao.org/react-native-drawer/download/react-native-drawer-2.5.1.tgz#08b9314184f48c724f1b467f8859797369798654"

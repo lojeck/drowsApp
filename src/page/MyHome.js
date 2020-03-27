@@ -10,6 +10,8 @@ import {
   View, Text, TouchableOpacity, TouchableHighlight, FlatList
 } from 'react-native';
 import codePush from "react-native-code-push";
+import Device_Info from 'react-native-device-info';
+
 
 export default class MyHome extends Component {
   static navigationOptions = {
@@ -33,7 +35,7 @@ export default class MyHome extends Component {
   headerList = () => {
     return (<View>
       <Text>{this.state.syncMessage}</Text>
-      <Text>1.0.1</Text>
+      <Text>{Device_Info.getVersion()}</Text>
     </View>);
   };
 
