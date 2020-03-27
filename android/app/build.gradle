@@ -106,8 +106,8 @@ android {
         applicationId "com.drowsapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 2
+        versionName "1.0.2"
     }
 
     signingConfigs {
@@ -138,7 +138,7 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            buildConfigField "String", "CODEPUSH_KEY", '"4oEQyxex9aWzRjd4mkjVnXJBO3g_XaiyxjX49d"'
+            buildConfigField "String", "CODEPUSH_KEY", '"8DScx1jfi7MNE36lrdZ2mpUsMGf44ksvOXqog"'
             signingConfig signingConfigs.release
         }
         releaseStaging {
@@ -146,7 +146,7 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             signingConfig signingConfigs.releaseStaging
-            buildConfigField "String", "CODEPUSH_KEY", '"YnJyIZQYu5z1fkhJJcO2h5PDIfg9O7gbCmm4g"'
+            buildConfigField "String", "CODEPUSH_KEY", '"5Qm9AO6vxkxDTJFxOPRPU2FW8OvB4ksvOXqog"'
             matchingFallbacks = ['debug', 'release']
         }
 
@@ -171,6 +171,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-device-info')
     implementation project(':react-native-code-push')
     implementation project(':react-native-vector-icons')
     implementation project(':@react-native-community_async-storage')
@@ -179,6 +180,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.android.support:multidex:1.0.3"
 }
 
 // Run this once to be able to run the application with BUCK
