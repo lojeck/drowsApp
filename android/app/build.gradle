@@ -73,7 +73,7 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    entryFile: "index.js"
+        entryFile: "index.js"
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -138,20 +138,28 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            buildConfigField "String", "CODEPUSH_KEY", '"8DScx1jfi7MNE36lrdZ2mpUsMGf44ksvOXqog"'
+            buildConfigField "String", "CODEPUSH_KEY", '"4oEQyxex9aWzRjd4mkjVnXJBO3g_XaiyxjX49d"'
+            buildConfigField "String", "CODEPUSH_URL", '""'
+//            buildConfigField "String", "CODEPUSH_KEY", '"WhyUugzI7FQj6u4dOaCKE9Jv2VME4ksvOXqog"'
+//            buildConfigField "String", "CODEPUSH_URL", '"http://192.168.1.200:3000/"'
             signingConfig signingConfigs.release
         }
-        releaseStaging {
-            // 从 release 拷贝配置，只修改了 pushKey
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            signingConfig signingConfigs.releaseStaging
-            buildConfigField "String", "CODEPUSH_KEY", '"5Qm9AO6vxkxDTJFxOPRPU2FW8OvB4ksvOXqog"'
-            matchingFallbacks = ['debug', 'release']
-        }
+//        releaseStaging {
+//            // 从 release 拷贝配置，只修改了 pushKey
+//            minifyEnabled enableProguardInReleaseBuilds
+//            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+//            signingConfig signingConfigs.releaseStaging
+////            buildConfigField "String", "CODEPUSH_KEY", '"YnJyIZQYu5z1fkhJJcO2h5PDIfg9O7gbCmm4g"'
+//            buildConfigField "String", "CODEPUSH_KEY", '"MuLCM1HILAzVpEctyKCFwOYuS0se4ksvOXqog"'
+//            buildConfigField "String", "CODEPUSH_URL", '"http://192.168.1.200:3000/"'
+//            matchingFallbacks = ['debug', 'release']
+//        }
 
         debug {
-            buildConfigField "String", "CODEPUSH_KEY", '"YnJyIZQYu5z1fkhJJcO2h5PDIfg9O7gbCmm4g"'
+//            buildConfigField "String", "CODEPUSH_KEY", '"YnJyIZQYu5z1fkhJJcO2h5PDIfg9O7gbCmm4g"'
+//            buildConfigField "String", "CODEPUSH_URL", '""'
+            buildConfigField "String", "CODEPUSH_KEY", '"WhyUugzI7FQj6u4dOaCKE9Jv2VME4ksvOXqog"'
+            buildConfigField "String", "CODEPUSH_URL", '"http://192.168.1.200:3000/"'
             applicationIdSuffix ".debug"
         }
     }
@@ -160,7 +168,7 @@ android {
         variant.outputs.each { output ->
             // For each separate APK per architecture, set a unique version code as described here:
             // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
-            def versionCodes = ["armeabi-v7a":1, "x86":2, "arm64-v8a": 3, "x86_64": 4]
+            def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
             def abi = output.getFilter(OutputFile.ABI)
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =

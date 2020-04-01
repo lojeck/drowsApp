@@ -34,6 +34,7 @@ export default class MyHome extends Component {
 
   headerList = () => {
     return (<View>
+      {/*<Text>2020年3月27日18:34:02</Text>*/}
       <Text>{this.state.syncMessage}</Text>
       <Text>{Device_Info.getVersion()}</Text>
     </View>);
@@ -44,9 +45,10 @@ export default class MyHome extends Component {
       codePush.sync(
         {
           updateDialog: {
+            appendReleaseDescription: true,
             optionalIgnoreButtonLabel: '下次再说',
             optionalInstallButtonLabel: '马上体验',
-            optionalUpdateMessage: '新版本来袭，是否更新',
+            // optionalUpdateMessage: '新版本来袭，是否更新',
             title: '更新提示',
             mandatoryUpdateMessage: '噢，版本中有一些大改动，不得不更新',
             mandatoryContinueButtonLabel: '立即更新'
@@ -58,7 +60,7 @@ export default class MyHome extends Component {
       );
     }
   };
-
+  
   codePushStatusDidChange(syncStatus) {
     switch (syncStatus) {
       case codePush.SyncStatus.CHECKING_FOR_UPDATE:
@@ -87,7 +89,7 @@ export default class MyHome extends Component {
         break;
     }
   }
-
+  
   codePushDownloadDidProgress(progress) {
     this.setState({progress});
   }

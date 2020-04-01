@@ -7,8 +7,7 @@ import React, {Component} from 'react';
 
 import {
   StyleSheet,
-  View,Text
-
+  View,Text,ProgressBarAndroid,
 } from 'react-native';
 
 export default class Setting extends Component {
@@ -23,7 +22,17 @@ export default class Setting extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>设置</Text>
+        <Text>33333333333333333333333333333333</Text>
+        {/*<View style={styles.container}>*/}
+        {/*  <ProgressBarAndroid />*/}
+        {/*  <ProgressBarAndroid styleAttr="Horizontal" />*/}
+        {/*  <ProgressBarAndroid styleAttr="Horizontal" color="#2596F3" />*/}
+        {/*  <ProgressBarAndroid*/}
+        {/*    styleAttr="Horizontal"*/}
+        {/*    indeterminate={false}*/}
+        {/*    progress={0.8}*/}
+        {/*  />*/}
+        {/*</View>*/}
       </View>
     )
   }
@@ -42,4 +51,4 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     // tintColor:'#4caf50'
   }
-})
+});

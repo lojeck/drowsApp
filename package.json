@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android-bundle": "react-native bundle --entry-file index.js --platform android --dev false --bundle-output ./bundles/index.android.bundle",
     "ios-bundle": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ./bundles/index.ios.bundle",
-    "push": "code-push release-react drowsApp android -d Staging --des 热更新测试",
+    "pushProduction": "code-push release-react drowsApp android -d Production --des 20:49热更新测试v1.0.2",
+    "pushStaging": "code-push release-react drowsApp android -d Staging --des 热更新测试v1.0.2",
     "test": "jest"
   },
   "dependencies": {
